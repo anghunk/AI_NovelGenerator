@@ -63,7 +63,7 @@ def generate_novel_architecture_ui(self):
                 timeout=timeout_val,
                 user_guidance=user_guidance  # 添加内容指导参数
             )
-            self.safe_log("✅ 小说架构生成完成。请在 'Novel Architecture' 标签页查看或编辑。")
+            self.safe_log("✅ 小说架构生成完成。请在 '小说架构' 标签页查看或编辑。")
         except Exception:
             self.handle_exception("生成小说架构时出错")
         finally:
@@ -105,7 +105,7 @@ def generate_chapter_blueprint_ui(self):
                 timeout=timeout_val,
                 user_guidance=user_guidance  # 新增参数
             )
-            self.safe_log("✅ 章节蓝图生成完成。请在 'Chapter Blueprint' 标签页查看或编辑。")
+            self.safe_log("✅ 章节蓝图生成完成。请在 '章节蓝图' 标签页查看或编辑。")
         except Exception:
             self.handle_exception("生成章节蓝图时出错")
         finally:

@@ -133,15 +133,15 @@ def Chapter_blueprint_generate(
         )
         blueprint_text = invoke_with_cleaning(llm_adapter, prompt)
         if not blueprint_text.strip():
-            logging.warning("Chapter blueprint generation result is empty.")
+            logging.warning("章节蓝图 generation result is empty.")
             return
 
         clear_file_content(filename_dir)
         save_string_to_txt(blueprint_text, filename_dir)
-        logging.info("Novel_directory.txt (chapter blueprint) has been generated successfully (single-shot).")
+        logging.info("Novel_directory.txt (章节蓝图) has been generated successfully (single-shot).")
         return
 
-    logging.info("Will generate chapter blueprint in chunked mode from scratch.")
+    logging.info("Will generate 章节蓝图 in chunked mode from scratch.")
     final_blueprint = ""
     current_start = 1
     while current_start <= number_of_chapters:
@@ -170,4 +170,4 @@ def Chapter_blueprint_generate(
         save_string_to_txt(final_blueprint.strip(), filename_dir)
         current_start = current_end + 1
 
-    logging.info("Novel_directory.txt (chapter blueprint) has been generated successfully (chunked).")
+    logging.info("Novel_directory.txt (章节蓝图) has been generated successfully (chunked).")

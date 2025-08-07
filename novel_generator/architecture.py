@@ -122,7 +122,7 @@ def Novel_architecture_generate(
         logging.info("Step2 already done. Skipping...")
     # 生成初始角色状态
     if "character_dynamics_result" in partial_data and "character_state_result" not in partial_data:
-        logging.info("Generating initial character state from character dynamics ...")
+        logging.info("Generating initial 角色状态 from character dynamics ...")
         prompt_char_state_init = create_character_state_prompt.format(
             character_dynamics=partial_data["character_dynamics_result"].strip()
         )
@@ -136,7 +136,7 @@ def Novel_architecture_generate(
         clear_file_content(character_state_file)
         save_string_to_txt(character_state_init, character_state_file)
         save_partial_architecture_data(filepath, partial_data)
-        logging.info("Initial character state created and saved.")
+        logging.info("Initial 角色状态 created and saved.")
     # Step3: 世界观
     if "world_building_result" not in partial_data:
         logging.info("Step3: Generating world_building_prompt ...")
